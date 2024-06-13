@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+</head>
+{% extends 'base.html' %}
+{% block div_centen %}
+{% for name in home %}
+<a href="{{ name }}" style="text-decoration: none;color: #000;">
+<div class="block">
+    <h2 class="block_text">{{ name }}</h2>
+</div>
+</a>
+{% endfor %}
+{% endblock %}
+
+{% block like %}  
+{{ init }}
+{% endblock %}
+{% block content %}
+<h1 class="cent_text">{{ teile }}</h1>
+<br>
+<div class="codetext">
+    <pre class="prediv">
+<code class="codediv">
+<samp class="code_blue">from</samp> <samp class="code_red">flask</samp> <samp class="code_blue">import</samp> <samp class="code_book">Flask</samp>
+
+<samp class="code_book">app = Flask(__name__)</samp>
+
+<samp class="code_blue">@app</samp><samp class="code_book">.route(</samp><samp class="code_green">'/'</samp><samp class="code_book">)</samp>
+<samp class="code_blue">def</samp> <samp class="code_red">hello</samp><samp class="code_book">():</samp>
+    <samp class="code_blue">return</samp> <samp class="code_green">'Welcome to My Watchlist!'</samp>
+</code>
+</pre>
+</div>
+{% for cente_txt in text %}
+{% if cente_txt[0][0] == '<h1>' %}
+    <div class="h1_txt_a" id="{{ cente_txt[1] }}">
+        <br>
+    <h1 class="h1_txt" tabindex="-1">{{ cente_txt[1] }}&nbsp;<a href="#{{ cente_txt[1] }}" class="home_a_go">¶</a></h1>
+</div>
+{% elif cente_txt[0][0] == '<p>' %}
+<p class="cent_txt">{{ cente_txt[1] }}</p>
+
+{% elif cente_txt[0][0] == '<py>' %}
+<div class="codetext">
+<pre class="prediv">
+<code class="codediv">
+<samp class="p_py">python</samp>
+  <!-- <p class="txt_left"> -->
+<samp class="code_red">{{ cente_txt[1] }}</samp>
+  <!-- </p> -->
+</code>
+</pre>
+</div>
+{% elif cente_txt[0][0] == '<shell>' %}
+<div class="codetext">
+<pre class="prediv">
+<code class="codediv">
+<samp class="p_py">shell</samp>
+<samp class="code_red">{{ cente_txt[1] }}</samp>
+</code>
+</pre>
+</div>
+{% elif cente_txt[0][0] == '<samp>' %}
+    <br>
+    <div class="div_prompt">
+        <div style="height: 100%;width: 90;margin-left: 20px;">
+    <samp class="samp_prompt" style="color: rgb(49, 49, 49);font-weight:800;">提示</samp><samp class="samp_prompt">{{ cente_txt[1] }}</samp>
+</div>
+</div>
+<br>
+{% elif cente_txt[0][0] == '<table>' %}
+    <table>
+        <tr class="table_tr">
+            {% for cente_txt1 in cente_txt[1] %}
+            <th class="table_th">{{ cente_txt1 }}</th>
+            {% endfor %}
+        </tr>
+            {% for cente_txt2 in cente_txt[2][0] %}
+                    <tr>
+                        {% for cente_txt3 in cente_txt2 %}
+                            <td class="table_td">{{ cente_txt3 }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        {% endfor %}
+                </tr>
+            {% endfor %}
+    </table>
+{% endif %}
+{% endfor %}
+<br><br>
+{% endblock %}
+
+{% block name %}{{ cent.usename }}{% endblock %}
+{% block content1 %}{{ cent.view }}{% endblock %}
+{% block content2 %}{{ cent.likes }}{% endblock %}
+
+
+{% block input_div_on_p %}
+{% for input_name in home %}
+<div class="input_div_on_p">
+    <p class="input_div_on_text">{{ input_name }}</p>
+</div>
+{% endfor %} 
+{% endblock %}
+
+{% block contentli %}
+{% for name in home %}
+{% if name == teile %}
+        <li><a class="diva" href="{{ name }}" style="color: blue;">{{ name }}</a></li>  
+    {% else %}
+        <li><a class="diva" href="{{ name }}" >{{ name }}</a></li>  
+    {% endif %}  
+{% endfor %} 
+{% endblock %}
+
+
+{% block contentdiv %}  
+    {% for cente_txt in text %}
+    {% if cente_txt[0][0] == '<h1>' %}
+            <li><a class="diva" href="#{{ cente_txt[1] }}">{{ cente_txt[1] }}</a></li> 
+    {% endif%}
+    {% endfor %}  
+{% endblock %}
+
+
+</body>
+<script src="{{ url_for('static', filename='JavaScript/js.js') }}"></script>
+</html>

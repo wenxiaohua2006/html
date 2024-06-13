@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en-US" class="html_cent">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <link rel="icon" href="{{ url_for('static', filename='images/totoro.jpg') }}">
+    {% endblock %}
+</head>
+<body id="2" class="body_cent">
+    <div class="divall">
+        <!-- 缩小窗口导航栏 -->
+        <div class="div_left_home">
+            <div class="div_left_home_text">
+                <div style="width: 100%;height: 130px;background: #000;">
+                <h2 class="div_left_home_div1_h2">Holle Flask</h2>
+                </div>
+                <div style="width: 100%;height: 60px;background: #5b5b5b;">
+                <h2 class="div_left_home_div2_h2">章节目录</h2>
+                </div>
+                <div class="home_div_centen">
+                    {% block div_centen %}
+                    {% endblock %}
+                    <a class="logouta logouta2" href="{{ url_for('logout') }}"><div class="logout">用户登出</div></a>
+                </div>
+            </div>
+        </div>
+        <!-- 缩小窗口搜索框 -->
+        <div class="div_Window_all" id="div_Window_all">
+            <div style="width: 100%;height: 60px;background: #ffffff;display: flex;position: relative;">
+                <div class="fanhui">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" id="svg1" style="cursor: pointer;margin-left: 15px;margin-top: 5px;" viewBox="0 0 24 24">
+                        <path fill="#b0b0b0" d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.42L5.83 13H21V7h-2z"/></svg>
+                    </div>
+                <div class="input_seek">
+                    <form>
+                        <input type="text" name="seek" id="seek1" class="input2" placeholder="搜索">
+                    </form>
+                </div>
+        </div>
+        <div class="prompt">
+            <label style="font-size: 15px;margin-top: -5;color: rgb(147, 147, 147);">输入内容以查询结果</label>
+        </div>
+        <div class="prompt_div">
+            <a href="#" style="text-decoration: none;color: #000;">
+            <div class="prompt_new_text">
+                <br>
+                <h1 style="margin-top: -20px;margin-left: 20px;">Flask入门教程</h1>
+                <p style="margin-left: 20px;">如果你把上面的程序保存成其他的名字，比如 hello.py，接着执行 flask run 命令会返回一个错误提示。这是因为 Flask 默认会假设你把程序存储在名为 app.py 或 wsgi.py 的文件中</p>
+            </div>
+        </a>
+        </div>
+    </div>
+    <!-- 主题内容 -->
+        <div class="div2">
+            <h1 class="txt1">my python and html Hello flask!!!</h1></div>
+        <div class="div_home">
+            <div class="div_home_1">
+                <div class="div_home_all">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path fill="#b0b0b0" d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+                </div>
+                <div class="h1_text">
+                <h1 class="home_h1">{{ teile }}</h1>
+            </div>
+                <div class="svg_botem">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">  
+                    <path fill="#b0b0b0" d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+                </div>    
+                </div>
+            <div class="div_home_2">
+                <div class="div_home_2_on">
+                    <div class="input_div">
+                <form method="post" action="#">
+                    <input type="text" name="go" id="input1" class="input1" placeholder="搜索">
+                </form>
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" style="margin-left: -45px;margin-top:12px" viewBox="0 0 24 24">  
+                    <path fill="#b0b0b0" d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+                </div>
+                <div class="input_div_on">
+                    <div class="input_div_on_p">
+                        <p class="input_div_on_text">Werkzeug（WSGI 工具库）完成和 Jinja（模板渲染库）</p>
+                    </div>
+                    {% block input_div_on_p %}
+                    {% endblock %}
+                </div>
+                </div>
+                </div>
+            <div class="div_home_3">
+                <!-- <div style="width: 100%;height: 65px;background-color: #000;"> -->
+                <div class="author">
+                <a href="#" style="width: 100px;height: 100%;background: #000000;text-decoration: none;">
+                    <div class="text_left">
+                        <div class="author_profile_picture"><img src="{{ url_for('static', filename='imgs/2.jpg') }}" class="author_profile_picture_imgs"></div>
+                    <div style="width: 100%;height: 50%;background: #000000;">
+                    <p>{% block name %}{% endblock %}</p>
+                    </div>
+                    <div style="width: 80%;height: 50%;background: #000000;display: flex;">
+                        <div style="width: 50%;height: 100%;background: #000000;margin-top: -5px;">
+                        <samp>观看次数</samp>&nbsp;<samp>{% block content1 %}{% endblock %}</samp>
+                        </div>
+                        <div style="width: 50%;height: 100%;background: #000000;margin-top: -5px;">
+                        <samp>点赞次数</samp>&nbsp;<samp id="like_nums">{% block content2 %}{% endblock %}</samp>
+                        </div>
+                    </div>
+                    </div>
+                </a>
+            </div>
+        <!-- </div> -->
+        <div class="my_log">
+                <div class="master">
+                    <h1 class="master_home">关于个人</h1>
+                </div>
+                <div class="bork">
+                    <button onclick="sendJson()" class="like" id="title_like">{% block like %}{% endblock %}</button>  
+                    <button onclick="" class="like_from">我的喜欢</button>
+                    <div class="he_bork"><p>他的作品</p></div>
+                </div>
+                <div class="work_text">
+                    <div class="work_text_cent">
+                        <h1 class="work_text_cent_txt">python hello word!</h1>
+                        <div class="work_text_cent_p"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;提示 你可以访问 Flask 文档的配置页面查看 Flask 内置的配置变量；同样的，在 Flask-SQLAlchemy 文档的配置页面可以看到 Flask-SQLAlchemy 提供的配置变量。</p></div>
+                        <samp class="time">2024/6/6</samp>
+                    </div>
+                    <div class="work_text_cent">
+                        <h1 class="work_text_cent_txt">python hello word!</h1>
+                        <div class="work_text_cent_p"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;提示 你可以访问 Flask 文档的配置页面查看 Flask 内置的配置变量；同样的，在 Flask-SQLAlchemy 文档的配置页面可以看到 Flask-SQLAlchemy 提供的配置变量。</p></div>
+                        <samp class="time">2024/6/6</samp>
+                    </div>
+                    <div class="work_text_cent">
+                        <h1 class="work_text_cent_txt">python hello word!</h1>
+                        <div class="work_text_cent_p"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;提示 你可以访问 Flask 文档的配置页面查看 Flask 内置的配置变量；同样的，在 Flask-SQLAlchemy 文档的配置页面可以看到 Flask-SQLAlchemy 提供的配置变量。</p></div>
+                        <samp class="time">2024/6/6</samp>
+                    </div>
+                    <div class="work_text_cent">
+                        <h1 class="work_text_cent_txt">python hello word!</h1>
+                        <div class="work_text_cent_p"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;提示 你可以访问 Flask 文档的配置页面查看 Flask 内置的配置变量；同样的，在 Flask-SQLAlchemy 文档的配置页面可以看到 Flask-SQLAlchemy 提供的配置变量。</p></div>
+                        <samp class="time">2024/6/6</samp>
+                    </div>
+                    <div class="work_text_cent">
+                        <h1 class="work_text_cent_txt">python hello word!</h1>
+                        <div class="work_text_cent_p"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;提示 你可以访问 Flask 文档的配置页面查看 Flask 内置的配置变量；同样的，在 Flask-SQLAlchemy 文档的配置页面可以看到 Flask-SQLAlchemy 提供的配置变量。</p></div>
+                        <samp class="time">2024/6/6</samp>
+                    </div>
+                    <div class="work_text_cent">
+                        <h1 class="work_text_cent_txt">python hello word!</h1>
+                        <div class="work_text_cent_p"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;提示 你可以访问 Flask 文档的配置页面查看 Flask 内置的配置变量；同样的，在 Flask-SQLAlchemy 文档的配置页面可以看到 Flask-SQLAlchemy 提供的配置变量。</p></div>
+                        <samp class="time">2024/6/6</samp>
+                    </div>
+                </div>
+        </div>
+            </div>
+        </div>
+        <div class="text_centen">
+            <div class="divall_left" id="1">
+                <div class="home_div">
+                    <br>
+                    <nav>
+                    <div class="home_name"><label class="home_p">{{ hoem_name }}</label></div>
+                        <ul class="home_ul">
+                            {% block contentli %}{% endblock %}
+                        </ul>
+                </nav>
+                </div>
+            </div>
+            <div class="divall_center">
+                <div class="divall_center_text">
+                    <br>
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+            <div class="divall_right">
+                <div class="home_div" style="margin-right: 25%;margin-left: 0px;">
+                    <br>
+                    <nav>
+                    <div class="home_name"><label class="home_p">目录</label></div>
+                        <ul class="home_ul">
+                            {% block contentdiv %}{% endblock %}
+                        </ul>
+                        <a class="logouta" href="{{ url_for('logout') }}"><div class="logout">用户登出</div></a>
+                </nav>
+                </div>
+            </div>
+        </div>
+        <!-- 尾部提示 -->
+        <div class="divall_bomoot">
+            <div class="on">
+                <a  href="{{ onout[0] }}" class="on_left">
+                    <div class="on_left_text">
+                        <p>上一章</p>
+                        <h1>←  ON</h1>
+                    </div>
+                </a>
+                <a href="{{ onout[1] }}" class="on_right">
+                    <div class="on_left_text">
+                        <p style="text-align: right;">下一章</p>
+                        <h1  style="text-align: right;">ON  →</h1>
+                    </div>
+                </a>
+            </div>
+            <div class="lai">
+                <br>
+                <div class="lai_song">
+                    <p class="bie">网络备案:www.flask.cn</p>
+                    <p class="bie">备案编码:1000000120320002123120000321000</p>
+                </div>
+                <div class="my">
+                    <p class="bie">编辑作者:wen</p>
+                    <p class="bie">联系方式:dwaiiibuidbw.wx</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='JavaScript/js.js') }}"></script>
+    <script>  
+    var like_num = document.getElementById('like_nums')
+    var title_like = document.getElementById('title_like')
+        function sendJson() {
+            const data = {
+                like:'increase'
+            };
+            const jsonData = JSON.stringify(data); // 将对象转换为JSON字符串  
+            fetch('/', { // 发送POST请求到服务器上的某个端点  
+                method: 'POST',  
+                headers: {  
+                    'Content-Type': 'application/json' // 告诉服务器发送的是JSON数据  
+                },  
+                body: jsonData // 发送JSON字符串  
+            })  
+            .then(response => response.json()) // 解析服务器的响应为JSON  
+            .then(data => {
+                console.log(data); // 在控制台中打印响应数据  
+                like_num.innerHTML = data.message; // 假设data包含要设置到innerHTML的值
+                var iflile = data.likeif;
+                if (iflile == true){
+                title_like.innerHTML = '取消点赞';
+            }else if (iflile == false){
+                title_like.innerHTML = '为我点赞';
+            }
+            })
+            .catch((error) => console.error('Error:', error)); // 捕获并打印错误
+        }
+
+    </script>
+</body>
+</html>

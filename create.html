@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="sendJson()">Send JSON Data</button>  
+    <script>  
+        function sendJson() {  
+            const data = {
+                name: 'John Doe',
+                age: 30,  
+                city: 'New York'  
+            };  
+            const jsonData = JSON.stringify(data); // 将对象转换为JSON字符串  
+            fetch('/c', { // 发送POST请求到服务器上的某个端点  
+                method: 'POST',  
+                headers: {  
+                    'Content-Type': 'application/json' // 告诉服务器发送的是JSON数据  
+                },  
+                body: jsonData // 发送JSON字符串  
+            })  
+            .then(response => response.json()) // 解析服务器的响应为JSON  
+            .then(data => console.log(data)) // 在控制台中打印响应数据  
+            .catch((error) => console.error('Error:', error)); // 捕获并打印错误  
+        }  
+    </script>
+</body>
+</html>
